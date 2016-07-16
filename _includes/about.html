@@ -1,0 +1,8 @@
+<div id="about" class="site-about">
+    <div class="w3-center">
+        <div class=".site-about-content">
+            {% capture tomarkdown %}{% include about.md %}{% endcapture %}
+            {{ tomarkdown | markdownify }}
+        </div>
+    </div>
+</div>
