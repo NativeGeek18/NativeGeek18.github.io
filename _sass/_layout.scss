@@ -1,231 +1,242 @@
-body, html {
-    height: 100%;
+/**
+ * Site header
+ */
+.site-header {
+    border-top: 5px solid $grey-color-dark;
+    border-bottom: 1px solid $grey-color-light;
+    min-height: 56px;
+
+    // Positioning context for the mobile navigation icon
+    position: relative;
 }
 
-a,p,h1,h2,h3,h4,h5,h6 {
-    font-family: 'Montserrat', sans-serif;
+.site-title {
+    font-size: 26px;
+    font-weight: 300;
+    line-height: 56px;
+    letter-spacing: -1px;
+    margin-bottom: 0;
+    float: left;
+
+    &,
+    &:visited {
+        color: $grey-color-dark;
+    }
 }
 
-/*########################################################
-  #                    Navbar                            #
-  ########################################################*/
-.site-navbar {
-    @extend .w3-navbar;
-    @extend .w3-large;
-    @extend .w3-left-align;
-    @extend .w3-white;
-    padding-right: 64px;
+.site-nav {
+    float: right;
+    line-height: 56px;
+
+    .menu-icon {
+        display: none;
+    }
+
+    .page-link {
+        color: $text-color;
+        line-height: $base-line-height;
+
+        // Gaps between nav items, but not on the last one
+        &:not(:last-child) {
+            margin-right: 20px;
+        }
+    }
+
+    @include media-query($on-palm) {
+        position: absolute;
+        top: 9px;
+        right: $spacing-unit / 2;
+        background-color: $background-color;
+        border: 1px solid $grey-color-light;
+        border-radius: 5px;
+        text-align: right;
+
+        .menu-icon {
+            display: block;
+            float: right;
+            width: 36px;
+            height: 26px;
+            line-height: 0;
+            padding-top: 10px;
+            text-align: center;
+
+            > svg {
+                width: 18px;
+                height: 15px;
+
+                path {
+                    fill: $grey-color-dark;
+                }
+            }
+        }
+
+        .trigger {
+            clear: both;
+            display: none;
+        }
+
+        &:hover .trigger {
+            display: block;
+            padding-bottom: 5px;
+        }
+
+        .page-link {
+            display: block;
+            padding: 5px 10px;
+
+            &:not(:last-child) {
+                margin-right: 0;
+            }
+            margin-left: 20px;
+        }
+    }
+}
+
+
+
+/**
+ * Site footer
+ */
+.site-footer {
+    border-top: 1px solid $grey-color-light;
+    padding: $spacing-unit 0;
+}
+
+.footer-heading {
+    font-size: 18px;
+    margin-bottom: $spacing-unit / 2;
+}
+
+.contact-list,
+.social-media-list {
+    list-style: none;
+    margin-left: 0;
+}
+
+.footer-col-wrapper {
+    font-size: 15px;
+    color: $grey-color;
+    margin-left: -$spacing-unit / 2;
+    @extend %clearfix;
+}
+
+.footer-col {
+    float: left;
+    margin-bottom: $spacing-unit / 2;
+    padding-left: $spacing-unit / 2;
+}
+
+.footer-col-1 {
+    width: -webkit-calc(35% - (#{$spacing-unit} / 2));
+    width:         calc(35% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-2 {
+    width: -webkit-calc(20% - (#{$spacing-unit} / 2));
+    width:         calc(20% - (#{$spacing-unit} / 2));
+}
+
+.footer-col-3 {
+    width: -webkit-calc(45% - (#{$spacing-unit} / 2));
+    width:         calc(45% - (#{$spacing-unit} / 2));
+}
+
+@include media-query($on-laptop) {
+    .footer-col-1,
+    .footer-col-2 {
+        width: -webkit-calc(50% - (#{$spacing-unit} / 2));
+        width:         calc(50% - (#{$spacing-unit} / 2));
+    }
+
+    .footer-col-3 {
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+@include media-query($on-palm) {
+    .footer-col {
+        float: none;
+        width: -webkit-calc(100% - (#{$spacing-unit} / 2));
+        width:         calc(100% - (#{$spacing-unit} / 2));
+    }
+}
+
+
+
+/**
+ * Page content
+ */
+.page-content {
+    padding: $spacing-unit 0;
+}
+
+.page-heading {
+    font-size: 20px;
+}
+
+.post-list {
+    margin-left: 0;
+    list-style: none;
+
     > li {
-        > a {
-            @extend .w3-padding-32;
-            text-transform: uppercase;
-            padding-right: 32px;
-            padding-left:  32px;
-            color: $navbar-color1;
+        margin-bottom: $spacing-unit;
+    }
+}
+
+.post-meta {
+    font-size: $small-font-size;
+    color: $grey-color;
+}
+
+.post-link {
+    display: block;
+    font-size: 24px;
+}
+
+
+
+/**
+ * Posts
+ */
+.post-header {
+    margin-bottom: $spacing-unit;
+}
+
+.post-title {
+    font-size: 42px;
+    letter-spacing: -1px;
+    line-height: 1;
+
+    @include media-query($on-laptop) {
+        font-size: 36px;
+    }
+}
+
+.post-content {
+    margin-bottom: $spacing-unit;
+
+    h2 {
+        font-size: 32px;
+
+        @include media-query($on-laptop) {
+            font-size: 28px;
         }
-        > a:hover {
-            background: $navbar-color2 !important;
-            color: $navbar-color3;
+    }
+
+    h3 {
+        font-size: 26px;
+
+        @include media-query($on-laptop) {
+            font-size: 22px;
         }
     }
-    .bars {
-        @extend .w3-hide-large;
-        @extend .w3-opennav;
-        @extend .w3-right;
-        max-width: 82px;
-    }
-    .link {
-        @extend .w3-right;
-        @extend .w3-hide-small;
-        @extend .w3-hide-medium;
-    }
-    .brand {
-        @extend .w3-hide-small;
-        padding-left: 64px;
-    }
-    .social {
-        @extend .w3-hide-small;
-        > a {
-            padding: 0;
-            padding-left: 16px;
+
+    h4 {
+        font-size: 20px;
+
+        @include media-query($on-laptop) {
             font-size: 18px;
         }
-        > a:hover {
-            background: transparent !important;
-        }
-    }
-    .active {
-        background: $navbar-color2;
-        color: $navbar-color3;
-    }
-}
-
-/*########################################################
-  #                    Header                            #
-  ########################################################*/
-.site-logo {
-    @extend .w3-hide-medium;
-    @extend .w3-hide-large;
-    @extend .w3-container;
-    padding-top: 40px;
-    padding-bottom: 32px;
-    background-color: #fff;
-    h5 {
-        padding-top: 16px;
-        color: $navbar-color1;
-    }
-}
-.site-header {
-    @extend .w3-container;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 80px;
-    .home-header {
-        width: 100%;
-    }
-}
-
-/*########################################################
-  #                    Footer                            #
-  ########################################################*/
-.site-footer {
-    @extend .w3-container;
-    padding-top: 90px;
-    padding-bottom: 90px;
-    background-color: rgb(68, 68, 68);
-    color: #fff;
-}
-
-/*########################################################
-  #                    GO-UP                             #
-  ########################################################*/
-.site-go-up {
-    @extend .w3-bottom;
-    @extend .w3-hide-medium;
-    @extend .w3-hide-small;
-    a {
-        border: 0;
-        display: inline-block;
-        outline: 3px solid rgb(68, 68, 68);
-        padding: 6px 16px;
-        vertical-align: middle;
-        overflow: hidden;
-        text-decoration: none !important;
-        text-align: center;
-        cursor: pointer;
-        white-space: nowrap;
-        color: rgb(68, 68, 68);
-        background-color: #fff;
-    }
-    a:hover {
-        color: #fff;
-        background-color: rgb(68, 68, 68);
-    }
-}
-
-/*########################################################
-  #                    About                             #
-  ########################################################*/
-
-.site-about {
-    @extend .w3-content;
-    padding-top: 82px;
-    padding-bottom: 128px;
-    p {
-        @extend .w3-justify;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
-    hr {
-        margin: 25px auto 30px;
-        padding: 0;
-        max-width: 250px;
-        border: 0;
-        border-top: solid 5px;
-        text-align: center;
-    }
-}
-
-/*########################################################
-  #                    Team                              #
-  ########################################################*/
-
-.site-team {
-    @extend .w3-container;
-    background-color: rgb(244, 244, 244);
-    padding-top: 82px;
-    padding-bottom: 64px;
-    h2 {
-        padding-top: 32px;
-        @extend .w3-center;
-    }
-    p {
-        @extend .w3-center;
-    }
-    hr {
-        margin: 25px auto 30px;
-        padding: 0;
-        max-width: 250px;
-        border: 0;
-        border-top: solid 5px;
-        text-align: center;
-    }
-    img {
-        opacity: 0.8;
-        padding-bottom: 32px;
-    }
-    img:hover {
-        opacity: 1;
-        cursor: pointer;
-    }
-}
-
-.site-team-modal {
-    @extend .w3-padding-32;
-    padding-left: 32px;
-    padding-right: 32px;
-    hr {
-        margin: 25px auto 30px;
-        padding: 0;
-        max-width: 250px;
-        border: 0;
-        border-top: solid 5px;
-        text-align: center;
-    }
-    img {
-        padding-bottom: 32px;
-    }
-}
-
-/*########################################################
-  #                    Projects                          #
-  ########################################################*/
-
-.site-projects-banner {
-    background-image: url("/assets/images/banner.jpg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
-    min-height: 400px;
-}
-
-.site-projects {
-    padding-top: 82px;
-    hr {
-        margin: 25px auto 30px;
-        padding: 0;
-        max-width: 250px;
-        border: 0;
-        border-top: solid 5px;
-        text-align: center;
-    }
-    img {
-        opacity: 0.8;
-    }
-    img:hover {
-        @extend .w3-card-2;
-        opacity: 1;
-        cursor: pointer;
     }
 }
