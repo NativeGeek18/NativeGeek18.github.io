@@ -1,5 +1,6 @@
 -
-    name: Ali Lemus
+    name: Ali
+    lastname: Lemus
     id: ali
     avatar: Ali.jpg
     info: >
@@ -8,7 +9,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Julio Fajardo
+    name: Julio
+    lastname: Fajardo
     id: fajardo
     avatar: Fajardo.jpg
     info: >
@@ -17,7 +19,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Victor Ferman
+    name: Victor
+    lastname: Ferman
     id: ferman
     avatar: Ferman.jpg
     info: >
@@ -26,7 +29,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Hugo Enríquez
+    name: Hugo
+    lastname: Enríquez
     id: hugo
     avatar: Hugo.jpg
     info: >
@@ -35,7 +39,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Andrés Castellanos
+    name: Andrés
+    lastname: Castellanos
     id: castellanos
     avatar: Castellanos.jpg
     info: >
@@ -44,7 +49,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Diego Calderón
+    name: Diego
+    lastname: Calderón
     id: calderon
     avatar: Calderon.jpg
     info: >
@@ -53,7 +59,8 @@
      tempor sit amet, ante. Donec eu libero sit amet quam egestas semper.
      Aenean ultricies mi vitae est. Mauris placerat eleifend leo.
 -
-    name: Carlos Girard
+    name: Carlos
+    lastname: Girard
     id: girard
     avatar: Girard.jpg
     info: >
