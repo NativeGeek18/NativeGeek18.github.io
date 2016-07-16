@@ -67,21 +67,32 @@ a,p,h1,h2,h3,h4,h5,h6 {
     @extend .w3-hide-medium;
     @extend .w3-hide-large;
     @extend .w3-container;
-    padding-top: 40px;
+    padding-top: 120px;
     padding-bottom: 32px;
-    background-color: #fff;
+    background-color: rgb(244, 244, 244);
     h5 {
         padding-top: 16px;
         color: $navbar-color1;
     }
 }
 .site-header {
-    @extend .w3-container;
-    padding-left: 0;
-    padding-right: 0;
-    padding-top: 80px;
-    .home-header {
-        width: 100%;
+    @extend .w3-opacity;
+    @extend .w3-hide-small;
+    background-image: url("/assets/images/about.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100%;
+    opacity: 0.8;
+    span {
+        @extend .w3-center;
+        @extend .w3-padding-xlarge;
+        @extend .w3-black;
+        @extend .w3-xxlarge;
+        @extend .w3-wide;
+        @extend .w3-animate-opacity;
+        font-family: 'Montserrat', sans-serif;
+        text-transform: uppercase;
     }
 }
 
@@ -208,6 +219,12 @@ a,p,h1,h2,h3,h4,h5,h6 {
     background-attachment: fixed;
     background-size: cover;
     min-height: 400px;
+}
+
+@media only screen and (max-width: 1024px) {
+    .site-projects-banner {
+        background-attachment: scroll;
+    }
 }
 
 .site-projects {

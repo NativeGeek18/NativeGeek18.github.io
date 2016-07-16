@@ -7,3 +7,22 @@ $(function() {
         event.preventDefault();
     });
 });
+
+$(function() {
+    $('a.active-change').bind('click', function(event) {
+        $( ".active-change" ).each(function( index ) {
+            $(this).removeClass("active");
+        });
+        $(this).addClass("active");
+    });
+});
+
+window.onscroll = function() {hideBottom()};
+function hideBottom() {
+    var goup = document.getElementById("goup");
+    if (document.body.scrollTop == 0 || document.body.scrollTop < 100) {
+        goup.style = "display: none;";
+    } else {
+        goup.style = "";
+    }
+}
